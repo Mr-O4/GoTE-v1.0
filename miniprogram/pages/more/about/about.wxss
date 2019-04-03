@@ -1,0 +1,20 @@
+/* miniprogram/pages/more/about/about.wxss */
+
+page {
+    background: #fff;
+}
+
+image {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+}
+
+.btn-back {
+    position: absolute;
+    top: 5.5vh;
+    left: 0;
+    z-index: 99;
+}

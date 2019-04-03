@@ -1,0 +1,159 @@
+<image src="https://ws2.sinaimg.cn/mw690/85dc7b76gy1g1l8p6o16aj20k00zkni0.jpg" mode="scaleToFill" style="width:100vw; height:100vh; position:fixed; top:0; left:0;" />
+<form class="container {{direction=='go'?'go':'back'}} padding-top-xl" bindsubmit="submit">
+    <view class="flex flex-direction align-center padding-top-xl text-white">
+        <view class="max-width flex justify-center align-start">
+            <navigator class="flex-sub padding-bottom padding-right text-black" open-type="navigateBack" delta="1" hover-class="none">
+                <text class="margin-left icon-back"></text>
+                <text>返回</text>
+            </navigator>
+            <view class="flex justify-center flex-treble">
+                <view class="bg-white title flex flex-direction justify-center align-center text-xl text-black text-bold">
+                    我的{{tipTitle}}
+                </view>
+            </view>
+            <view class="flex-sub"></view>
+        </view>
+        <!-- 出行方式 -->
+        <view class="max-width padding-top-sm padding-left-lg padding-right-lg text-center">
+            <view class="flex align-center padding-left-sm ">
+                <image src="/icons/publish/date.png" style="width:50rpx; height:50rpx;"></image>
+                <text class="margin-left-sm margin-right-sm">出行方式</text>
+                <view class="flex-treble">
+                    <picker mode="selector" value="{{tripMode}}" range="{{tripModeArray}}" bindchange="selectionTripMode" >
+                        <input class="margin-sm text-left" placeholder="请选择出行方式" placeholder-style="color:#FFF;" disabled bindblur="selectionTripMode" value="{{tripMode}}"></input>
+                    </picker>
+                </view>
+            </view>
+        </view>
+        <!-- 人数 -->
+        <view class="max-width padding-left-lg padding-right-lg">
+            <view class="flex align-center padding-left-sm">
+                <image src="/icons/publish/peoples.png" style="width:50rpx; height:50rpx;"></image>
+                <text class="margin-left-sm margin-right-sm">已拼人数</text>
+                <view class="flex-treble margin-sm">
+                    <text>{{currentPeopleNum}}</text>
+                </view>
+            </view>
+            <view class="flex align-center padding-left-sm ">
+                <image src="/icons/publish/peoples.png" style="width:50rpx; height:50rpx;"></image>
+                <text class="margin-left-sm margin-right-sm">最多人数</text>
+                <view class="flex-treble dashed">
+                    <picker mode="selector" range="{{peopleNumArray}}" value="{{maxPeopleNum}}" bindchange="bindMaxPeopleNumChange">
+                        <input class="flex-treble margin-sm" disabled name="maxPeopleNum" type="number" placeholder="{{editData.maxPeopleNum}}" placeholder-style="color:#FFF;" value="{{maxPeopleNum}}" bindblur="bindMaxPeopleNumChange"></input>
+                    </picker>
+                </view>
+            </view>
+        </view>
+        <!-- 上车下车位置 -->
+        <view class="max-width padding-left-lg padding-right-lg">
+            <view class="flex align-center padding-left-sm">
+                <image src="/icons/publish/begin_localtion.png" style="width:50rpx; height:50rpx;"></image>
+                <view class="flex-treble dashed">
+                    <input class="margin-sm" name="point" disabled bindtap="onClickModal" value="{{pointName}}"></input>
+                </view>
+            </view>
+            <view class="flex align-center padding-left-sm">
+                <image src="/icons/publish/end_localtion.png" style="width:50rpx; height:50rpx;"></image>
+                <input class="flex-treble margin-sm" disabled value="{{desName}}"></input>
+            </view>
+        </view>
+        <!-- modal -->
+        <view class="cu-modal {{isShowModal?'show':''}} text-black">
+            <view class="cu-dialog">
+                <view class="cu-bar bg-white justify-end">
+                    <view class="content">请选择校门</view>
+                </view>
+                <view class="padding">
+                    <view class="flex justify-start align-center padding-sm solid margin-bottom">
+                        <text class="text-df">校</text>
+                        <input class="margin-left-sm text-left" maxlength="10" placeholder="例如：正门，2号门..." bindblur="selectionPoint" value="{{_pointName}}"></input>
+                    </view>
+                    <view class="flex flex-wrap justify-around">
+                        <view class="cu-btn bg-gray shadow margin-xs" catchtap="selectTag" data-text="正门">
+                            正门
+                        </view>
+                        <view class="cu-btn bg-gray shadow margin-xs" catchtap="selectTag" data-text="后门">
+                            后门
+                        </view>
+                        <view class="cu-btn bg-gray shadow margin-xs" catchtap="selectTag" data-text="东门">
+                            东门
+                        </view>
+                        <view class="cu-btn bg-gray shadow margin-xs" catchtap="selectTag" data-text="2号门">
+                            2号门
+                        </view>
+                    </view>
+                </view>
+                <view class="cu-bar bg-white">
+                    <view class="action margin-0 flex-sub" bindtap="cancel">取消</view>
+                    <view class="action margin-0 flex-sub text-blue solid-left" bindtap="confirm">
+                        确定
+                    </view>
+                </view>
+            </view>
+        </view>
+        <!-- modal -->
+        <!-- 日期时间 -->
+        <view class="max-width padding-left-lg padding-right-lg">
+            <view class="flex align-center padding-left-sm ">
+                <image src="/icons/publish/date.png" style="width:50rpx; height:50rpx;"></image>
+                <text class="margin-left-sm margin-right-sm">出发日期</text>
+                <view class="flex-treble">
+                    <input class="margin-sm" disabled value="{{goDate}}"></input>
+                </view>
+                <view class="flex-treble dashed">
+                    <picker mode="time" value="{{goTime}}" start="06:00" end="23:59" bindchange="selectionTime">
+                        <input class="margin-sm" name="goTime" disabled value="{{goTime}}" bindblur="selectionTime" ></input>
+                    </picker>
+                </view>
+            </view>
+        
+        </view>
+        <!-- 手机号码 -->
+        <view class="max-width padding-left-lg padding-right-lg">
+            <view class="flex align-center padding-left-sm">
+                <image src="/icons/publish/phone.png" style="width:50rpx; height:50rpx;"></image>
+                <text class="margin-left-sm margin-right-sm">手机号码</text>
+                <view class="flex-treble dashed">
+                <input class=" margin-sm" name="tel" type="number" placeholder="请填写手机号码" placeholder-style="color:#FFF;" value="{{phoneNum}}" bindblur="bindPhoneNumChange"></input>
+                </view>
+            </view>
+        </view>
+        <!-- 备注 -->
+        <view class="max-width padding-top-sm padding-left-lg padding-right-lg padding-bottom-lg">
+            <view class="padding-sm flex justify-start align-center">
+                <text>备注：</text>
+                <view class="flex-treble dashed">
+                <input class="margin-sm text-cut" adjust-position maxlength="140" placeholder="有啥想说的嘛？" placeholder-style="color:#FFFFFF;" value="{{note}}" bindblur="bindNoteChange"></input>
+                </view>
+            </view>
+        </view>
+
+        <view class="max-width padding-top-sm padding-left-lg padding-right-lg flex justify-center align-center">
+            <checkbox-group bindchange="checkedAgree">
+                <checkbox class="margin-right-sm round blue" checked></checkbox>我已阅读并同意
+            </checkbox-group>
+            <navigator class="text-olive" url="../settings/userAgreement/userAgreement" open-type="navigate">《用户协议》</navigator>和
+            <navigator class="text-olive" url="../settings/disclaimer/disclaimer" open-type="navigate">《免责声明》</navigator>
+        </view>
+
+
+        <view class="max-width flex justify-center padding-top-lg padding-left-lg padding-right-lg">
+            <button class="cu-btn bg-white lg round shadow" form-type="submit" wx:if="{{isAgree}}">
+                <!-- <image class="pub_icon" src="/icons/publish/pub.png"></image> -->
+                <text class="text-bold text-green">修改</text>
+            </button>
+        </view>
+    </view>
+</form>
+
+<view class="cu-modal {{errModal?'show':''}}">
+    <view class="cu-dialog bg-white">
+        <view class="padding-xl text-lg">
+            <view><text class="icon-warnfill text-red text-xxl margin-right"></text></view>
+            <text>{{errMessage}}</text>
+        </view>
+        <view class="cu-bar bg-white solid-top">
+            <view class="action padding flex-sub text-cyan" bindtap="hideErrModal">确定</view>
+        </view>
+    </view>
+</view>

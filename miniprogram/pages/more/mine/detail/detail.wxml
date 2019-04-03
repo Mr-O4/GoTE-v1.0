@@ -1,0 +1,93 @@
+<image src="https://wx4.sinaimg.cn/mw690/85dc7b76gy1g1l8esv2tmj20k00zkk3c.jpg" mode="scaleToFill" style="width:100vw; height:100vh; position:fixed; top:0; left:0;" />
+<view class="container {{direction=='go'?'go':'back'}} padding-top-xl text-lg">
+    <view class="flex flex-direction align-center padding-top-xl text-white">
+        <view class="max-width flex justify-center align-start">
+            <navigator class="flex-sub padding-bottom padding-right text-black" open-type="navigateBack" delta="1" hover-class="none">
+                <text class="margin-left icon-back"></text>
+                <text>返回</text>
+            </navigator>
+            <view class="flex justify-center flex-treble">
+                <view class="bg-white title flex flex-direction justify-center align-center text-xl text-black text-bold">
+                    我的加入
+                </view>
+            </view>
+            <view class="flex-sub"></view>
+        </view>
+        <!-- 出行方式 -->
+        <view class="max-width padding-top-sm padding-left-lg padding-right-lg text-center">
+            <view class="flex align-center padding-left-sm ">
+                <image src="/icons/publish/date.png" style="width:50rpx; height:50rpx;"></image>
+                <text class="margin-left-sm margin-right-sm">出行方式</text>
+                <view class="flex-treble margin-sm text-bold text-left">
+                    <text>{{tripMode}}</text>
+                </view>
+            </view>
+        </view>
+        <!-- 人数 -->
+        <view class="max-width padding-left-lg padding-right-lg">
+            <view class="flex align-center padding-left-sm">
+                <image src="/icons/publish/peoples.png" style="width:50rpx; height:50rpx;"></image>
+                <text class="margin-left-sm margin-right-sm">已拼人数</text>
+                <view class="flex-treble margin-sm text-bold">
+                    <text>{{currentPeopleNum}}</text>
+                </view>
+            </view>
+            <view class="flex align-center padding-left-sm ">
+                <image src="/icons/publish/peoples.png" style="width:50rpx; height:50rpx;"></image>
+                <text class="margin-left-sm margin-right-sm">最多人数</text>
+                <view class="flex-treble margin-sm text-bold">
+                    <text>{{maxPeopleNum}}</text>
+                </view>
+            </view>
+        </view>
+        <!-- 上车下车位置 -->
+        <view class="max-width padding-left-lg padding-right-lg">
+            <view class="flex align-center padding-left-sm">
+                <image src="/icons/publish/begin_localtion.png" style="width:50rpx; height:50rpx;"></image>
+                <text class="margin-left-sm margin-right-sm">上车位置</text>
+                <view class="flex-treble margin-sm text-bold">
+                    <text>{{pointName}}</text>
+                </view>
+            </view>
+            <view class="flex align-center padding-left-sm">
+                <image src="/icons/publish/end_localtion.png" style="width:50rpx; height:50rpx;"></image>
+                <text class="margin-left-sm margin-right-sm">下车位置</text>
+                <view class="flex-treble margin-sm text-bold">
+                    <text>{{desName}}</text>
+                </view>
+            </view>
+        </view>
+        <!-- 日期时间 -->
+        <view class="max-width padding-left-lg padding-right-lg">
+            <view class="flex align-center padding-left-sm ">
+                <image src="/icons/publish/date.png" style="width:50rpx; height:50rpx;"></image>
+                <text class="margin-left-sm margin-right-sm">出发日期</text>
+                <view class="flex-treble">
+                    <input class="margin-sm text-bold" disabled value="{{goDate}}"></input>
+                </view>
+                <view class="flex-twice">
+                    <input class="margin-sm text-bold" name="goTime" disabled value="{{goTime}}"></input>
+                </view>
+            </view>
+        </view>
+        <!-- 手机号码 -->
+        <view class="max-width padding-left-lg padding-right-lg">
+            <view class="flex align-center padding-left-sm">
+                <image src="/icons/publish/phone.png" style="width:50rpx; height:50rpx;"></image>
+                <text class="margin-left-sm margin-right-sm">手机号码</text>
+                <view class="flex-treble margin-sm text-bold">
+                    <text>{{phoneNum}}</text>
+                </view>
+            </view>
+        </view>
+        <!-- 备注 -->
+        <view class="max-width padding-top-sm padding-left-lg padding-right-lg padding-bottom-lg">
+            <view class="padding-sm flex justify-start align-center">
+                <text>备注：</text>
+                <view class="flex-treble margin-sm text-bold">
+                    <text>{{note}}</text>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>

@@ -1,0 +1,58 @@
+    .com-selectBox{
+        width: 500rpx;
+        /* height: 150rpx; */
+    }
+    .com-sContent{
+        border-radius: 10rpx;
+        background-color: #1296DB;
+        font-size: 38rpx;
+        position: relative;
+        height: 80rpx;
+        line-height: 60rpx;
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: center;
+        align-items: center;
+    }
+    .com-sImg{
+        position: absolute;
+        right: 20rpx;
+        top: 22rpx;
+        width: 36rpx;
+        height: 30rpx;
+        margin-right: 15rpx;
+        transition: all .3s ease;
+    }
+    .com-sTxt{
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        padding:0 40rpx 0 12rpx;
+        font-size: 28rpx;
+        color: #FFFFFF;
+    }
+    .com-sList{
+        background: white;
+        width: inherit;
+        position: absolute;
+        border: 1px solid #1296DB;
+        border-top: none;
+        box-sizing: border-box;
+        z-index: 3;
+        max-height: 240rpx;
+        overflow: auto;
+    }
+    .com-sItem{
+        height: 60rpx;
+        line-height: 60rpx;
+        border-top: 1px solid #e2e2e2;
+        padding: 0 12rpx;
+        text-align: left;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        font-size: 28rpx;
+    }
+    .com-sItem:first-child{
+        border-top: none;
+    }

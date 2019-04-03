@@ -1,0 +1,15 @@
+<template name="pub-back">
+
+        <view class="flex align-center padding-left-sm solid-top-light" bindtap="selectionDes">
+            <image src="/icons/publish/begin_localtion.png" style="width:50rpx; height:50rpx;"></image>
+            <input class="flex-treble margin-sm" placeholder="请选择上车的位置" placeholder-style="color:#FFFFFFBF;" name="point" disabled catchtap="selectionDes" value="{{desName}}"></input>
+        </view>
+
+        <view class="flex align-center padding-left-sm solid-bottom-light" bindtap="onClickModal">
+            <image src="/icons/publish/end_localtion.png" style="width:50rpx; height:50rpx;"></image>
+            <view class="flex-treble solid-top-light">
+                <input class="margin-sm" placeholder="请输入下车点" placeholder-style="color:#FFFFFFBF;" name="des" disabled bindtap="onClickModal" value="{{pointName}}"></input>
+            </view>
+        </view>
+
+</template>

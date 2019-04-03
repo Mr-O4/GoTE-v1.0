@@ -1,0 +1,5 @@
+    <navigator class="btn-back flex-sub padding-bottom padding-right text-black" open-type="navigateBack" delta="1" hover-class="none">
+        <text class="margin-left icon-homefill"></text>
+        <text class="">首页</text>
+    </navigator>
+<image src="https://ws1.sinaimg.cn/mw690/85dc7b76gy1g1o3jwtd4gj20k00zkaba.jpg" mode="widthFix" style=""></image>

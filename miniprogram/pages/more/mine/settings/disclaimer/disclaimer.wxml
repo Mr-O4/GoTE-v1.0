@@ -1,0 +1,35 @@
+<view class="cu-custom shadow" style="height:{{CustomBar}}px;">
+    <view class="cu-bar fixed bg-white" style="height:{{CustomBar}}px;padding-top:{{StatusBar}}px;">
+        <navigator class="action" open-type="navigateBack" delta="1" hover-class="none">
+            <text class="icon-back"></text>
+            返回
+        </navigator>
+    </view>
+</view>
+<view class="padding">
+    <view class="max-width text-center text-xxl text-bold">免责声明</view>
+    <view class="padding-sm">
+        <view class="text-xl text-bold margin-bottom">总则</view>
+        <view class="padding-xs margin-bottom text-content">用户在接受GoTE行程分享平台小程序之前，请务必仔细阅读本条款并同意本声明。</view>
+        <view class="padding-xs margin-bottom text-content">用户直接或通过各类方式（如站外API引用等）间接使用GoTE行程分享平台小程序服务和数据的行为，都将被视作已无条件接受本声明所涉全部内容；若用户对本声明的任何条款有异议，请停止使用GoTE行程分享平台小程序所提供的全部服务。</view>
+    </view>
+
+    <view class="padding-sm">
+        <view class="text-xl text-bold margin-bottom">第一条 </view>
+        <view class="padding-xs margin-bottom text-content">1. 用户以各种方式使用GoTE行程分享平台小程序服务和数据（包括但不限于发表、宣传介绍、转发、浏览及利用GoTE行程分享平台小程序或GoTE行程分享平台小程序用户发布内容）的过程中，不得以任何方式利用GoTE行程分享平台小程序直接或间接从事违反中国法律、以及社会公德的行为，且用户应当恪守下述承诺：</view>
+        <view class="padding-xs margin-bottom text-content">2. 发布或提供的内容符合中国法律、社会公德；</view>
+        <view class="padding-xs margin-bottom text-content">3. 不得干扰、损害和侵犯GoTE行程分享平台小程序的各种合法权利与利益；</view>
+        <view class="padding-xs margin-bottom text-content">4. 遵守GoTE行程分享平台小程序以及与之相关的网络服务的协议、指导原则、管理细则等；</view>
+        <view class="padding-xs margin-bottom text-content">GoTE行程分享平台小程序有权对违反上述承诺的内容予以删除。</view>    
+    </view>
+
+    <view class="padding-sm">
+        <view class="text-xl text-bold margin-bottom">第二条 </view>
+        <view class="padding-xs margin-bottom text-content">1. GoTE行程分享平台小程序仅为用户发布的行程信息内容提供存储空间，因用户自身原因引起的任何纠纷，交通事故，GoTE行程分享平台小程序不承担任何法律责任。GoTE行程分享平台小程序不对用户发表内容提供任何形式的保证：不保证内容满足您的要求，不保证GoTE行程分享平台小程序的服务不会中断。因网络状况、通讯线路、第三方网站或管理部门的要求等任何原因而导致您不能正常使用GoTE行程分享平台小程序，GoTE行程分享平台小程序不承担任何法律责任。</view>
+        <view class="padding-xs margin-bottom text-content">2. 用户在GoTE行程分享平台小程序发表的内容（包含但不限于GoTE行程分享平台小程序目前各产品功能里的内容）仅表明其个人的立场和观点，并不代表GoTE行程分享平台小程序的立场或观点。其中，出行信息的发布服务是仅为用户提供信息传播与分享的平台性服务。作为内容的发表者，需自行对所发表内容负责，因所发表内容引发的一切纠纷，由该内容的发表者承担全部法律及连带责任。GoTE行程分享平台小程序不承担任何法律及连带责任。</view>
+        <view class="padding-xs margin-bottom text-content">3. 用户在GoTE行程分享平台小程序发布任何违反国家法律的内容，GoTE行程分享平台小程序有权予以删除，并保留移交司法机关处理的权利。</view>
+        <view class="padding-xs margin-bottom text-content">4. 个人或单位如认为GoTE行程分享平台小程序上存在侵犯自身合法权益的内容，应准备好具有法律效应的证明材料，及时与GoTE行程分享平台小程序取得联系，以便GoTE行程分享平台小程序迅速做出处理。</view>
+    </view>
+    
+    <view class="padding-sm">联系邮箱：i@tcp404.com</view>    
+</view>

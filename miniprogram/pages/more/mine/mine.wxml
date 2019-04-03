@@ -1,0 +1,86 @@
+<view class="Mine-bg">
+    <image src="https://wx4.sinaimg.cn/mw690/85dc7b76gy1g1mbfrvuadj20k00dcnds.jpg" mode="aspectFill" style="width:100vw; height:28vh;" />
+    <navigator class="btn-back flex-sub padding-bottom padding-right text-black" open-type="navigateBack" delta="1" hover-class="none">
+        <text class="margin-left icon-homefill"></text>
+        <text class="">首页</text>
+    </navigator>
+    <view class="info flex justify-end">
+        <view class="avatar cu-avatar xl round" style="background-image:url({{avatarUrl}});"></view>
+        <view class="nick_name bg-white flex justify-end align-center padding-bottom-sm">
+            <text class="text-black text-xl text-bold text-cut">{{nickName}}</text>
+            <navigator class="text-xxl text-bold text-blue margin " open-type="navigateTo" url="./settings/settings" hover-class="none">
+                <text class="icon-settingsfill"></text>
+            </navigator>
+        </view>
+    </view>
+</view>
+<view class="flex justify-around padding-lg bg-white solid-bottom">
+    <button class="cu-btn {{TabCur=='0'?'bg-gradual-blue':'bg-white'}} shadow" data-id="0" bindtap="isChecked">
+        我的发布
+    </button>
+    <button class="cu-btn {{TabCur=='1'?'bg-gradual-blue':'bg-white'}} shadow" data-id="1" bindtap="isChecked">
+        我的加入
+    </button>
+    <view class="cu-load load-modal" wx:if="{{isLoadModal}}">
+        <view class="icon-discoverfill text-blue"></view>
+        <view class="gray-text">加载中...</view>
+    </view>
+</view>
+
+<!-- 我的发布 -->
+<view class="cu-timeline" hidden="{{TabCur!=0}}">
+    <view class="cu-item {{item.direction=='go'?'icon-pullright text-blue':'icon-pullleft text-red'}} text-sm" wx:for="{{publishList}}" wx:key>
+        <text>{{item.pubDate}} {{item.pubHours < 10 ? '0' + item.pubHours : item.pubHours}}:{{item.pubMin < 10 ? '0' + item.pubMin : item.pubMin}}</text>
+        <view class="content {{item.direction=='go'?'bg-gradual-blue':'bg-gradual-orange'}} shadow-blur" bindtap="isSelector" data-id="{{index}}">
+            <text class="text-df text-cut" wx:if="{{item.direction=='go'}}" style="max-width:348rpx">{{item.pointName}} <text class="text-bold text-lg text-yellow">到</text> {{item.desName}}</text>
+            <text class="text-df text-cut" wx:if="{{item.direction=='back'}}" style="max-width:348rpx">{{item.desName}} <text class="text-bold text-lg text-mauve">回</text> {{item.pointName}}</text>
+            <view class="action {{index==selectorIndex?'show':'un_show'}}">
+                <button class="cu-btn round bg-gray shadow margin-right-sm" bindtap="edit" data-id="{{index}}">
+                    <text class="icon-edit"></text>
+                </button>
+                <button class="cu-btn round bg-red shadow" bindtap="confirmTheDeletion" data-id="{{item._id}}">
+                    <text class="icon-delete"></text>
+                </button>
+            </view>
+            <text wx:if="{{index!=selectorIndex}}" class="icon-right"></text>
+        </view>
+    </view>
+</view>
+<!-- 我的加入 -->
+<view class="cu-timeline" hidden="{{TabCur!=1}}">
+    <view class="cu-item {{item.direction=='go'?'icon-pullright text-blue':'icon-pullleft text-red'}} text-sm" wx:for="{{joinList}}" wx:key>
+        <text>{{item.pubDate}} {{item.pubHours < 10 ? '0' + item.pubHours : item.pubHours}}:{{item.pubMin < 10 ? '0' + item.pubMin : item.pubMin}}</text>
+        <view class="content {{item.direction=='go'?'bg-gradual-blue':'bg-gradual-orange'}} shadow-blur" bindtap="isSelector" data-id="{{index}}">
+            <text class="text-df text-cut" style="max-width:348rpx" wx:if="{{item.direction=='go'}}">{{item.pointName}} <text class="text-bold text-lg text-yellow">到</text> {{item.desName}}</text>
+            <text class="text-df text-cut" style="max-width:348rpx" wx:if="{{item.direction=='back'}}">{{item.desName}} <text class="text-bold text-lg text-mauve">回</text> {{item.pointName}}</text>
+            <view class="action {{index==selectorIndex?'show':'un_show'}}">
+                <button class="cu-btn round bg-gray shadow margin-right-sm" bindtap="detail" data-id="{{index}}">
+                    <text class="icon-read"></text>
+                </button>
+                <button class="cu-btn round bg-green shadow" bindtap="call" data-index="{{index}}">
+                    <text class="icon-phone"></text>
+                </button>
+            </view>
+            <text wx:if="{{index!=selectorIndex}}" class="icon-right"></text>
+        </view>
+    </view>
+</view>
+
+<view wx:if="{{isDataEmpty}}">
+    <view class="loadmore loadmore_line">
+        <view class="loading_text loadmore_text_in-line">莫得数据了</view>
+    </view>
+</view>
+
+
+<view class="cu-modal {{isShowModal?'show':''}}">
+    <view class="cu-dialog">
+        <view class="padding-xl bg-white">
+            <text class="text-xl text-bold">确认删除？</text>
+        </view>
+        <view class="cu-bar bg-white">
+            <view class="action margin-0 flex-sub text-blue solid-left" bindtap="cancel">取消</view>
+            <view class="action margin-0 flex-sub  solid-left" bindtap="delete">确定</view>
+        </view>
+    </view>
+</view>

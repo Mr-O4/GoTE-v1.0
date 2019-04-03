@@ -1,0 +1,123 @@
+<view>
+    <image src="/images/banner.png" mode="widthFix" class="response"></image>
+    <view id="tab" class="bg-gray nav text-center text-lg light {{ceiling?'fixed':''}}" style="padding-top:{{StatusBar}}px;">
+        <view class="cu-item {{0==TabCur?'text-black cur':''}}" bindtap="tabSelect" data-id="0">
+            <text class="icon-pullright"></text> 出发
+        </view>
+        <view class="cu-item {{1==TabCur?'text-black cur':''}}" bindtap="tabSelect" data-id="1">
+            <text class="icon-pullleft"></text> 回校
+        </view>
+    </view>
+</view>
+<scroll-view scroll-y="{{isScrollTop}}" enable-back-to-top style="height:calc(100vh - {{StatusBar}}px -89rpx);">
+    <text class="flex justify-center text-blue text-lg margin-top-xl" wx:if="{{isDataEmpty}}">
+        目前没有人发布出行信息哦 \n 快点击右下角 ＋ 发布一条
+    </text>
+    <view wx:for="{{0==TabCur?itemsDataGo:itemsDataBack}}" wx:key>
+        <view class="margin-sm bg-white flex flex-direction shadow-warp" data-id="{{index}}" bindtap="showModal">
+            <!-- item顶部头像昵称栏 -->
+            <view class="flex {{0==TabCur?'bg-gradual-blue':'bg-gradual-orange'}} padding-sm">
+                <image src="{{item.avatarUrl ? item.avatarUrl : '/images/user-unlogin.png'}}" class="cu-avatar df circle margin-right-sm" />
+                <view class="flex flex-direction">
+                    <view class="text-lg">{{item.nickName}}</view>
+                    <view class="text-sm margin-top-xs">
+                        {{item.pubDate}} {{item.pubHours
+                        < 10 ? '0' + item.pubHours : item.pubHours}} : {{item.pubMin < 10 ? '0' + item.pubMin : item.pubMin}} </view>
+                    </view>
+                </view>
+                <!-- item内容栏 -->
+                <view class="flex flex-direction padding-sm text-center">
+                    <!-- 出行方式 -->
+                    <view class="text-df">
+                        出行方式：
+                        <text class="text-xl text-bold">{{item.tripMode}}</text>
+                    </view>
+                    <!-- 人数 -->
+                    <view class="flex justify-around align-center text-lg margin-xs">
+                        <!-- 最多人数 -->
+                        <view class="flex align-center">
+                            <text class="icon-group_fill text-xxl margin-right-sm {{0==TabCur?'text-blue':'text-orange'}}"></text>
+                            <text>人数：</text>
+                            <text class="text-bold">{{item.maxPeopleNum}}</text>
+                        </view>
+                        <!-- 目前人数 -->
+                        <view class="flex align-center">
+                            <text class="icon-group_fill text-xxl margin-right-sm {{0==TabCur?'text-cyan':'text-red'}}"></text>
+                            <text>已拼：</text>
+                            <text class="text-bold">{{item.currentPeopleNum}}</text>
+                        </view>
+                    </view>
+                    <!-- 地点 -->
+                    <view class="flex margin-sm text-lg">
+                        <view wx:if="{{0==TabCur}}" class="flex-twice text-cut text-bold">
+                            校 {{item.pointName}}
+                        </view>
+                        <view wx:if="{{1==TabCur}}" class="flex-twice text-cut text-bold">
+                            {{item.desName}}
+                        </view>
+
+                        <view class="flex-sub">
+                            <image src="/icons/index/right.png" style="width:64rpx; height:64rpx;"></image>
+                        </view>
+
+                        <view wx:if="{{0==TabCur}}" class="flex-twice text-cut text-bold">
+                            {{item.desName}}
+                        </view>
+                        <view wx:if="{{1==TabCur}}" class="flex-twice text-cut text-bold">
+                            校 {{item.pointName}}
+                        </view>
+                    </view>
+                    <!-- 出发&预算 -->
+                    <view class="max-width flex justify-center text-df">
+                        <view class="flex flex-direction align-start">
+                            <view>
+                                <text class="icon-locationfill"></text> 出发：
+                                <text>{{item.goDate}} \t {{item.goTime}}</text>
+                            </view>
+                            <view>
+                                <text class="icon-rechargefill"></text> 预算：￥{{item.cost}} / 人</view>
+                        </view>
+                    </view>
+                </view>
+                <view class="text-center margin-xs">
+                    <text class="text-black text-df ">备注：{{item.note}}</text>
+                    <view class="text-xs text-gray padding-top-sm">本小程序仅提供出行信息分享，要自行寻找车辆和司机哦~~</view>
+                </view>
+            </view>
+        </view>
+        <view hidden="{{!isLoading}}">
+            <view class="loadmore">
+                <view class="loading"></view>
+                <text class="loading_text">等一哈</text>
+            </view>
+        </view>
+        <view wx:if="{{isNoData}}">
+            <view class="loadmore loadmore_line">
+                <view class="loading_text loadmore_text_in-line">没了</view>
+            </view>
+        </view>
+</scroll-view>
+<import src="../../templates/index-modal/index-modal" />
+<template is="index_modal" data="{{modalData, isShowModal, TabCur}}" />
+
+<!-- 错误提示框 -->
+<view class="cu-modal {{errModal?'show':''}}">
+    <view class="cu-dialog bg-white">
+        <view class="padding-xl text-lg">
+            <view class="margin-bottom"><text class="icon-warnfill text-red text-xxl"></text></view>
+            <text>{{errMessage}}</text>
+        </view>
+        <view class="cu-bar bg-white solid-top">
+            <view class="action padding flex-sub text-cyan" bindtap="hideErrModal">确定</view>
+        </view>
+    </view>
+</view>
+
+
+<!-- 发布按钮 -->
+<view class="pub_button">
+    <image class="pub_icon pub {{isPubBtnChecked?'show':'un_show'}}" src="/icons/index/pub.png" bindtap="checkPub"></image>
+    <image class="pub_icon mine {{isPubBtnChecked?'show':'un_show'}}" src="/icons/index/mine.png" bindtap="mine"></image>
+    <image class="pub_icon about {{isPubBtnChecked?'show':'un_show'}}" src="/icons/index/about.png" bindtap="about"></image>
+    <image class="pub_icon publish {{isPubBtnChecked?'show':'un_show'}}" src="/icons/index/publish.png" bindtap="publish"></image>
+</view>

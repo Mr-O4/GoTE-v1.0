@@ -1,0 +1,67 @@
+<view class="cu-custom shadow" style="height:{{CustomBar}}px;">
+    <view class="cu-bar fixed bg-white" style="height:{{CustomBar}}px;padding-top:{{StatusBar}}px;">
+        <navigator class="action" open-type="navigateBack" delta="1" hover-class="none">
+            <text class="icon-back"></text>
+            返回
+        </navigator>
+    </view>
+</view>
+<view class="padding">
+    <view class="max-width text-center text-xxl text-bold">用户使用协议</view>
+    <view class="padding-sm">
+        <view class="padding-xs text-content">"GoTE"行程分享平台小程序（以下简称"GoTE"小程序）提供共同出行信息共享及其附属信息交互服务。</view>
+        <view class="padding-xs text-content">"GoTE"行程分享小程序用户协议（以下称"用户协议"）适用于您访问 "GoTE"小程序，以及在通过"GoTE"小程序发布或接受其他用户发布的信息，享受"GoTE"小程序向您提供的信息、建议及服务。</view>
+        <view class="padding-xs text-content">在登录成为"GoTE"小程序的用户之前，请先仔细阅读本用户条款。登录成功之后即为同意本用户协议。</view>
+    </view>
+    <view class="padding-sm">
+        <view class="text-xl text-bold margin-bottom">第一条 服务内容</view>
+        <view class="padding-xs margin-bottom text-content">1.1	“同行者”（与行程发布者统称“用户”）是指，以共同出行他人车辆方式或按一定路线出行为目的、在“GoTE”小程序上以加入与自己的出行路线相近的行程等方式，发起共同出行行为，并通过“GoTE”小程序与行程发布者达成共同出行的个人。</view>
+        <view class="padding-xs margin-bottom text-content">1.2	“行程发布者”（与同行者统称“用户”）是指按一定路线出行、并自愿以与他人达成共同出行为目的、在“GoTE”小程序发布自己的出行路线，或接受他人的共同出行需求，并通过“GoTE”小程序与同行者达成共同出行的个人。</view>
+        <view class="padding-xs margin-bottom text-content">1.3	“GoTE”小程序向您提供获得共同出行或发布出行信息的途径。您可以通过微信登录成为行程发布者，通过 “GoTE”小程序发布出行信息而获得”GoTE”小程序提供的相应信息服务。</view>
+        <view class="padding-xs margin-bottom text-content">1.4	一旦乘客通过“GoTE”小程序发布共同出行需求信息，即出行时间、起始地点及目的地等，“GoTE”小程序将实时地展示信息，将该信息通过“GoTE”小程序展示给与其有相邻起始地点及目的地，且有可能与其达成共同出行的同行者。</view>
+        <view class="padding-xs margin-bottom text-content">1.5	“GoTE”小程序提供的并不是出租、用车、驾驶或运输服务，我们提供的仅是注册用户之间的信息交互及匹配服务。如果用户的共同出行需求信息被其他用户接受并确认，“GoTE”小程序即在双方之间达成共同出行匹配。本用户协议的第二条与第三条内容以及”GoTE”小程序提供的其他建议将对双方的权利义务进行说明，以便双方理解遵守。</view>    
+    </view>
+
+    <view class="padding-sm">
+        <view class="text-xl text-bold margin-bottom">第二条 同行者的权利与义务</view>
+        <view class="padding-xs margin-bottom text-content">2.1 同行者应具有完全民事行为能力，并保证其向”GoTE”小程序提供的信息真实、准确、完整。“GoTE”小程序在任何时候都有权验证同行者所提供的信息。由于同行者提供虚假或不完整信息所导致的任何责任或损失，应由同行者独立承担；</view>
+        <view class="padding-xs margin-bottom text-content">2.2 同行者应按照双方约定的时间和地点等候共同出行，如因同行者原因无法继续共同出行的，同行者应通知行程发起人，主动取消订单，并支付相应补偿；</view>
+        <view class="padding-xs margin-bottom text-content">2.3 同行者按照约定到达约定出行起始地点开始共同出行前，应使用电话或其他方式联系行程发起人，协商出行费用，行程地点和时间等信息。同行者有义务确认对方身份真实性。</view>
+        <view class="padding-xs margin-bottom text-content">2.4 同行者不得在共同出行过程中进行不文明的行为（包括但不限于吸烟、喝酒、吐痰等），因同行者原因致使人员受伤、发生交通事故、造成车辆损坏或其他损失的，同行者应向受损方进行赔偿；</view>
+        <view class="padding-xs margin-bottom text-content">2.5 同行者应按照约定金额（非平台预估价格）向行程发起人当面支付出行分摊费用，同行者有权拒绝行程发起人要求出发前预付，或支付额外费用的要求；</view>    
+        <view class="padding-xs margin-bottom text-content">2.6 同行者不得携带危险品及其他法律、法规规定禁止携带的物品搭乘行程发起人的车辆或自行约定的第三方车辆，否则行程发起人有权拒绝同行者共同出行；</view>
+        <view class="padding-xs margin-bottom text-content">2.7 除同行者提前说明共同出行者不止一人的情形外，同行者应保证仅有同行者本人与行程发起人共同出行，否则行程发起人有权拒绝其他人员共同出行；</view>
+        <view class="padding-xs margin-bottom text-content">2.8 同行者不得在不乘坐车辆的情况下，委托行程发起人单独运送物品，平台不建议乘客利用共同出行运送物品。如同行者坚持委托行程发起人运送物品，该委托为同行者与行程发起人之间的私人行为，并且平台无法保证在该物品运送服务中，物品不会由于行程发起人或第三方的原因而导致损失。”GoTE”小程序对于由此造成的任何损失不进行任何担保和责任承担。在同行者不共同出行而单独委托行程发起人运送物品的情况下，行程发起人有权拒绝运送；</view>
+        <view class="padding-xs margin-bottom text-content">2.9 同行者理解并接受，行程发起人并非专业的驾驶服务或出租服务提供者，在共同出行过程中出现的分歧，双方应进行友好协商。</view>
+    </view>
+
+    <view class="padding-sm">
+        <view class="text-xl text-bold margin-bottom">第三条 行程发起人的权利义务</view>
+        <view class="padding-xs margin-bottom text-content">3.1 行程发起人向”GoTE”小程序提供的信息应真实、准确、完整，”GoTE”小程序在任何时候都有权验证行程发起人所提供的信息。由于行程发起人提供虚假或不完整信息所导致的任何责任或损失，应由行程发起人独立承担；</view>
+        <view class="padding-xs margin-bottom text-content">3.2 行程发起人发起自驾出行时，应合法拥有驾驶车辆的使用权及行驶上路资格，并保证车辆行驶安全、行驶手续的合法性、有效性；</view>
+        <view class="padding-xs margin-bottom text-content">3.3 行程发起人有权对”GoTE”小程序通过信息匹配向其推送的共同出行需求进行选择，自愿与同行者达成共同出行；</view>
+        <view class="padding-xs margin-bottom text-content">3.4 行程发起人一旦确认接受共同出行需求，即应当按照行程订单要求的时间，到达行程订单指定的共同出行起始地点。如因行程发起人原因无法进行共同出行的，行程发起人应通知乘客，主动取消订单，并支付相应补偿；</view>
+        <view class="padding-xs margin-bottom text-content">3.5 行程发起人按照约定到达约定出行起始地点开始共同出行前，应使用电话或其他方式联系同行者，协商出行费用，行程地点和时间等信息。行程发起人有义务确认对方身份真实性；</view>    
+        <view class="padding-xs margin-bottom text-content">3.6 行程发起人在共同出行过程中应尽合理努力和注意保证同行者在共同出行过程中的安全，并安全将乘客按照双方一致同意的路线送达目的地，如果由于车主原因造成行驶过程中的安全事故，车主应当承担相应的赔偿责任；</view>
+        <view class="padding-xs margin-bottom text-content">3.7 行程发起人理解并接受，共同出行费用的分担应通过线下当面支付，按照协商金额（非平台预估价格）进行支付。行程发起人不得向同行者要求双方商定费用以外的任何财物；</view>
+        <view class="padding-xs margin-bottom text-content">3.8 行程发起人不得违反现行法律、法规及当地地方性法规、部门规章的规定，或进行非法活动；</view>
+        <view class="padding-xs margin-bottom text-content">3.9 行程发起人不得在未经提示和征得同行者同意的情况下，对车辆内或同行者录制视听资料。如平台发现行程发起人有未经对方同意对车内录音、录像的行为，有权停止为行程发起人提供”GoTE”小程序服务，由于行程发起人私自对车内录像或将录像内容对外传播导致的侵权行为，行程发起人应当承担相应的赔偿责任；</view>
+        <view class="padding-xs margin-bottom text-content">3.10 行程发起人与同行者在出行过程中产生的一切道路通行费用或桥梁通行费用，应由双方自行协商承担；</view>
+        <view class="padding-xs margin-bottom text-content">3.11 行程发起人不得转让本用户协议中的权利及义务。</view>
+    </view>
+
+    <view class="padding-sm">
+        <view class="text-xl text-bold margin-bottom">第四条 “GoTE”小程序的权利义务</view>
+        <view class="padding-xs margin-bottom text-content">4.1 “GoTE”小程序免费提供用户发布或接受共同出行信息的小程序；</view>
+        <view class="padding-xs margin-bottom text-content">4.2 “GoTE”小程序在收到同行者发送的共同出行需求后，匹配对应行程，将同行者的共同出行需求发送给与同行者选择的行程对应的行程发起人，并及时将订单达成情况反馈给同行者。”GoTE”小程序将做出合理的努力，帮助同行者与行程发起人能够达成共同出行。不过，这受制于同行者的出行路线是否能够与起始地点附近的行程的出行路线相匹配；</view>
+        <view class="padding-xs margin-bottom text-content">4.3 “GoTE”小程序向行程发起人和同行者提供共同出行信息，并提示双方确认的上车时间、地点，行程发起人和同行者可根据实际路况情况协商适当调整上车时间、地点。由于同行者搭行程发起人自驾的顺路车辆属于民事互助行为，由于路况或车主本身的原因，行程时间的确定性无法保证，同行者可在行程开始前与行程发起人确认行程，如由于路况或其他原因导致行程发起人无法及时完成共同出行行程，同行者可尽快选择其他交通方式完成出行。鉴于自驾方式同行者需要在一定程度上配合行程发起人的出行行程及时间，对于时间较为紧迫的出行需求，平台建议同行者优先选择其他交通方式或者提前准备其他出行方式，避免由于行程发起人行程的不确定性给同行者出行带来影响；</view>
+        <view class="padding-xs margin-bottom text-content">4.4 “GoTE”小程序禁止行程发起人或同行者在未经提示和对方同意的情况下，在车内或行程中进行录音、录像。在征得对方同意的情况下进行的录音、录像内容仅能作为记录共同出行过程的证明信息予以短期留存，不得通过网络传输、线下拷贝等任何方式进行传播，不得将录音、录像的内容通过网络进行直播；</view>
+        <view class="padding-xs margin-bottom text-content">4.5 虽有前款规定，双方同意，”GoTE”小程序无法保证其所提供的信息中没有任何错误、缺陷、恶意软件或病毒。对于因使用（或无法使用）信息平台导致的任何损害，”GoTE”小程序不承担责任。此外，对于因使用（或无法使用）与信息平台的电子通信手段导致的任何损害，包括（但不限于）因电子通信传达失败或延时、第三方或用于电子通信的计算机程序对电子通信的拦截或操纵，以及病毒传输导致的损害，”GoTE”小程序不承担责任；</view>    
+    </view>
+
+    <view class="padding-sm">
+        <view class="text-xl text-bold margin-bottom">第五条 收费标准及收费方式</view>
+        <view class="padding-xs margin-bottom text-content">5.1 “GoTE”小程序为提高行程发起人与同行者之间的信息撮合效率，共同出行费用由于双方电话提前协商。</view>
+        <view class="padding-xs margin-bottom text-content">5.2 “GoTE”小程序有权向使用平台服务的用户收取小额信息服务费。</view>    
+    </view>
+</view>

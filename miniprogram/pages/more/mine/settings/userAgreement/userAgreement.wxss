@@ -1,0 +1,4 @@
+/* miniprogram/pages/more/mine/settings/userAgreement/userAgreement.wxss */
+page{
+    background: #FFF;
+}

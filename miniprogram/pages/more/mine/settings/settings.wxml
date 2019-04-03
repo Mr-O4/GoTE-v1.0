@@ -1,0 +1,51 @@
+<view class="cu-custom" style="height:{{CustomBar}}px;">
+    <view class="cu-bar fixed bg-white" style="height:{{CustomBar}}px;padding-top:{{StatusBar}}px;">
+        <navigator class="action" open-type="navigateBack" delta="1" hover-class="none">
+            <text class="icon-back"></text> 返回
+        </navigator>
+    </view>
+</view>
+
+<view class="cu-list menu sm-border card-menu margin-top">
+    <view class="cu-item arrow">
+        <button class="content text-left" open-type="openSetting">
+            <text class="icon-settingsfill text-grey" ></text>
+            <text class="text-grey">授权设置</text>
+        </button>
+    </view>
+
+    <view class="cu-item arrow">
+        <button class="content text-left" open-type="feedback">
+            <text class="icon-commentfill text-grey" ></text>
+            <text class="text-grey">意见反馈</text>
+        </button>
+    </view>
+
+   <view class="cu-item arrow">
+        <navigator class="content" hover-class="none" url="../list/list" open-type="redirect">
+            <text class="icon-questionfill text-grey"></text>
+            <text class="text-grey">常见问题</text>
+        </navigator>
+    </view>
+
+    <view class="cu-item arrow">
+        <navigator class="content" hover-class="none" url="./userAgreement/userAgreement" open-type="navigate">
+            <text class="icon-cardboardfill text-grey"></text>
+            <text class="text-grey">用户使用协议</text>
+        </navigator>
+    </view>
+
+    <view class="cu-item arrow">
+        <navigator class="content" hover-class="none" url="./disclaimer/disclaimer" open-type="navigate">
+            <text class="icon-cardboard text-grey"></text>
+            <text class="text-grey">免责声明</text>
+        </navigator>
+    </view>
+
+    <view class="cu-item arrow">
+        <view class="content" bindtap="cleanCache">
+            <text class="icon-clean text-grey"></text>
+            <text class="text-grey">清除缓存</text>
+        </view>
+    </view>
+</view>

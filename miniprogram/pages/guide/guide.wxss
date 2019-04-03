@@ -1,0 +1,54 @@
+/* miniprogram/pages/guide/guide.wxss */
+page {
+    height: 100%;
+}
+
+.bgimg {
+    z-index: -1;
+    height: 100%;
+    width: 100%;
+    position: relative;
+}
+
+.userinfo {
+    z-index: 20;
+    width: 500rpx;
+    position: fixed;
+    top: 250rpx;
+    left: 125rpx;
+    transition: all 300ms ease;
+}
+
+.userinfo-avatar {
+    z-index: 99;
+    border-radius: 100%;
+}
+
+.userinfo-avatar:after {
+    border: none;
+}
+
+.button {
+    z-index: 30;
+    height: 80rpx;
+    width: 500rpx;
+    margin: 30rpx;
+    border-radius: 10rpx;
+    background-color: #1296DB;
+    font-size: 30rpx;
+    color: #FFFFFF;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.login {
+    display: flex;
+}
+.start {
+    display: none;
+}
+
+.com-select {
+    z-index: 40;
+}
