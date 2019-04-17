@@ -1,5 +1,5 @@
-<view class="cu-custom" style="height:{{CustomBar}}px;">
-    <view class="cu-bar fixed bg-white" style="height:{{CustomBar}}px;padding-top:{{StatusBar}}px;">
+<view class="cu-custom shadow bg-gradual-blue" style="height:{{CustomBar}}px;">
+    <view class="cu-bar fixed" style="height:{{CustomBar}}px;padding-top:{{StatusBar}}px;">
         <navigator class="action" open-type="navigateBack" delta="1" hover-class="none">
             <text class="icon-back"></text> 返回
         </navigator>
@@ -7,7 +7,7 @@
 </view>
 
 <view class="cu-list menu sm-border card-menu margin-top">
-    <view class="cu-item arrow">
+    <view class="cu-item arrow bg-gradual-blue">
         <button class="content text-left" open-type="openSetting">
             <text class="icon-settingsfill text-grey" ></text>
             <text class="text-grey">授权设置</text>
@@ -22,9 +22,16 @@
     </view>
 
    <view class="cu-item arrow">
-        <navigator class="content" hover-class="none" url="../list/list" open-type="redirect">
+        <navigator class="content" hover-class="none" url="./FAQ/FAQ" open-type="navigate">
             <text class="icon-questionfill text-grey"></text>
             <text class="text-grey">常见问题</text>
+        </navigator>
+    </view>
+
+    <view class="cu-item arrow">
+        <navigator class="content" hover-class="none" url="../../about/about" open-type="navigate">
+            <text class="icon-questionfill text-grey"></text>
+            <text class="text-grey">关于我们</text>
         </navigator>
     </view>
 

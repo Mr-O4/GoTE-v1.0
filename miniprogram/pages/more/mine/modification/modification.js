@@ -7,7 +7,6 @@ const msg = require("../../../../libs/msgfilter.js");
 
 Page({
     data: {
-        tripModeArray: ["叫车", "滴滴", "自驾"],
         peopleNumArray: ["", "1", "2", "3", "4", "5"],
         pubDate: date.getFullYear() + "-" + ((date.getMonth() + 1) < 10 ? "0" + (date.getMonth() + 1) : (date.getMonth() + 1)) + "-" + (date.getDate() < 10 ? "0" + date.getDate() : date.getDate()),
 
@@ -18,7 +17,7 @@ Page({
             // editData: _,
             id: _._id,
             tipTitle: _.direction == "go" ? "出发" : "回校",
-            tripMode: _.tripMode == "打车" ? "打车" : _.tripMode == "滴滴" ? "滴滴" : "自驾",
+            direction: _.direction,
             currentPeopleNum: _.currentPeopleNum,
             maxPeopleNum: _.maxPeopleNum,
             pointName: _.pointName,
@@ -31,13 +30,6 @@ Page({
             isAgree: true
         });
         this.initValidate();
-    },
-    selectionTripMode(event) {
-        const _this = this;
-        _this.initValidate();
-        _this.setData({
-            tripMode: _this.data.tripModeArray[event.detail.value]
-        })
     },
 
     /** 最多人数 */
@@ -56,7 +48,7 @@ Page({
     },
 
     /** 
-     * 上车点 
+     * 见面地点 
      * 
      * @param _pointName modal中的input
      * @param pointName 发布页中的input，在 templates/pub-go 或 pub-back 中
@@ -98,7 +90,7 @@ Page({
         if (_this.data.pointName === "") {
             _this.setData({
                 errModal: true,
-                errMessage: "请输入上车地点",
+                errMessage: "请输入见面地点",
             })
         } else {
             _this.setData({
@@ -176,7 +168,6 @@ Page({
         _data.school = wx.getStorageSync("schoolNameForShort");
         db.collection(_data.school).doc(_data.id).update({
             data: {
-                tripMode: _data.tripMode,
                 pointName: _data.pointName,
                 goTime: _data.goTime,
                 pubDate: _data.pubDate,
@@ -228,8 +219,8 @@ Page({
         /** 自定义提示信息 */
         let message = {
             point: {
-                required: "请选择上车地点",
-                minlength: "请选择上车地点"
+                required: "请选择见面地点",
+                minlength: "请选择见面地点"
             },
             goTime: {
                 required: "请选择出发时间",
@@ -249,7 +240,7 @@ Page({
         // 自定义验证规则
         this.WxValidate.addMethod("point", (value) => {
             return this.WxValidate.optional(value)
-        }, "请输入上车地点");
+        }, "请输入见面地点");
 
         this.WxValidate.addMethod("goTime", (value) => {
             return this.WxValidate.optional(value)

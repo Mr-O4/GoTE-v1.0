@@ -18,23 +18,7 @@
             </view>
             <view class="flex-sub"></view>
         </view>
-        <view class="max-width padding-top-sm padding-left-lg padding-right-lg text-center">
-            <view class="text-df">出行方式</view>
-            <radio-group class="flex justify-around padding-top-sm block text-df" bindchange="radioChange">
-                <view class="flex align-center">
-                    <radio class="olive margin-right-xs" value="打车" checked></radio>
-                    <view>打车</view>
-                </view>
-                <view class="flex align-center">
-                    <radio class="olive margin-right-xs" value="滴滴"></radio>
-                    <view>滴滴</view>
-                </view>
-                <view class="flex align-center">
-                    <radio class="olive margin-right-xs" value="自驾"></radio>
-                    <view>自驾</view>
-                </view>
-            </radio-group>
-        </view>
+       
         <view wx:if="{{isShowTemplate}}" class="max-width padding-top-sm padding-left-lg padding-right-lg">
             <import src="../../templates/pub-go-from-school/pub-go" />
             <template is="pub-go" data="{{isShowModal, pointName, desName}}" />

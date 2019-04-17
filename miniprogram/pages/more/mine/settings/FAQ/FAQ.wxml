@@ -1,2 +1,41 @@
-<!--miniprogram/pages/more/mine/settings/FAQ/FAQ.wxml-->
-<text>miniprogram/pages/more/mine/settings/FAQ/FAQ.wxml</text>
+<view class="cu-custom shadow bg-gradual-blue" style="height:{{CustomBar}}px;">
+    <view class="cu-bar fixed" style="height:{{CustomBar}}px;padding-top:{{StatusBar}}px;">
+        <navigator class="action" open-type="navigateBack" delta="1" hover-class="none">
+            <text class="icon-back"></text>
+            返回
+        </navigator>
+    </view>
+</view>
+<view class="text-df bg-white">
+    <view class="padding">
+        <view class="max-width text-center text-xxl text-bold">常见问题</view>
+    </view>
+    <view class="padding">
+        <view class="text-bold margin-bottom">问：GOTE小程序需要支付费用/购买会员吗？</view>
+        <view class="margin-bottom text-content"> 答：GOTE小程序是发布行程信息的小程序，不存在收费的。</view>
+    </view>
+    <view class="padding">
+        <view class="text-bold margin-bottom">问：GOTE小程序中怎么加入行程？</view>
+        <view class="margin-bottom text-content">  答：登录GOTE之后，在主页寻找适合自己的行程，点击加入并拨打电话。</view>
+    </view>
+    <view class="padding">
+        <view class="text-bold margin-bottom">问：GOTE小程序中怎么发布行程？</view>
+        <view class="margin-bottom text-content">  答：登录GOTE之后，在主页中点击右下角的 + 号，再点击扩展的第一个图标进入，填写相关信息后发布行程</view>
+    </view>
+    <view class="padding">
+        <view class="text-bold margin-bottom"> 问：我的发布信息填错了，怎么修改/删除呢？</view>
+        <view class="margin-bottom text-content"> 答：登录GOTE之后，在主页中点击右下角的 + 号，再点击扩展的第三个图标进入，在“我的发布”中管理您发布的行程。</view>
+    </view>
+    <view class="padding">
+        <view class="text-bold margin-bottom"> 问：怎么查看我加入了那些行程？</view>
+        <view class="margin-bottom text-content">  答：登录GOTE之后，在主页中点击右下角的 + 号，再点击扩展的第三个图标进入，在“我的加入”中查看您加入的行程</view>
+    </view>
+    <view class="padding">
+        <view class="text-bold margin-bottom">  问：GOTE小程序登录页面中没有我的学校怎么办？</view>
+        <view class="margin-bottom text-content"> 答：在设置->意见反馈中，将信息反馈给我们。</view>
+    </view>
+    <view class="padding">
+        <view class="text-bold margin-bottom"> 问：我暂时不想使用GOTE了怎么办？</view>
+        <view class="margin-bottom text-content"> 答：在设置中，点击清除缓存，但是您发布/加入的行程依然存在。</view>
+    </view>
+</view>

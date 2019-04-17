@@ -13,27 +13,18 @@
             </view>
             <view class="flex-sub"></view>
         </view>
-        <!-- 出行方式 -->
-        <view class="max-width padding-top-sm padding-left-lg padding-right-lg text-center">
-            <view class="flex align-center padding-left-sm ">
-                <image src="/icons/publish/date.png" style="width:50rpx; height:50rpx;"></image>
-                <text class="margin-left-sm margin-right-sm">出行方式</text>
-                <view class="flex-treble">
-                    <picker mode="selector" value="{{tripMode}}" range="{{tripModeArray}}" bindchange="selectionTripMode" >
-                        <input class="margin-sm text-left" placeholder="请选择出行方式" placeholder-style="color:#FFF;" disabled bindblur="selectionTripMode" value="{{tripMode}}"></input>
-                    </picker>
-                </view>
-            </view>
-        </view>
+
         <!-- 人数 -->
-        <view class="max-width padding-left-lg padding-right-lg">
+        <view class="max-width padding-top-sm padding-left-lg padding-right-lg">
+           
             <view class="flex align-center padding-left-sm">
                 <image src="/icons/publish/peoples.png" style="width:50rpx; height:50rpx;"></image>
-                <text class="margin-left-sm margin-right-sm">已拼人数</text>
+                <text class="margin-left-sm margin-right-sm">目前人数</text>
                 <view class="flex-treble margin-sm">
                     <text>{{currentPeopleNum}}</text>
                 </view>
             </view>
+
             <view class="flex align-center padding-left-sm ">
                 <image src="/icons/publish/peoples.png" style="width:50rpx; height:50rpx;"></image>
                 <text class="margin-left-sm margin-right-sm">最多人数</text>
@@ -44,17 +35,25 @@
                 </view>
             </view>
         </view>
-        <!-- 上车下车位置 -->
+        <!-- 见面位置 目的地 -->
         <view class="max-width padding-left-lg padding-right-lg">
             <view class="flex align-center padding-left-sm">
                 <image src="/icons/publish/begin_localtion.png" style="width:50rpx; height:50rpx;"></image>
-                <view class="flex-treble dashed">
+
+                <view class="flex-treble dashed" wx:if="{{direction=='go'}}">
                     <input class="margin-sm" name="point" disabled bindtap="onClickModal" value="{{pointName}}"></input>
                 </view>
+
+                <input class="flex-treble margin-sm" disabled value="{{desName}}" wx:if="{{direction!='go'}}"></input>
             </view>
             <view class="flex align-center padding-left-sm">
                 <image src="/icons/publish/end_localtion.png" style="width:50rpx; height:50rpx;"></image>
-                <input class="flex-treble margin-sm" disabled value="{{desName}}"></input>
+
+                <input class="flex-treble margin-sm" disabled value="{{desName}}" wx:if="{{direction=='go'}}"></input>
+
+                <view class="flex-treble dashed" wx:if="{{direction!='go'}}">
+                    <input class="margin-sm" name="point" disabled bindtap="onClickModal" value="{{pointName}}"></input>
+                </view>
             </view>
         </view>
         <!-- modal -->
@@ -139,7 +138,6 @@
 
         <view class="max-width flex justify-center padding-top-lg padding-left-lg padding-right-lg">
             <button class="cu-btn bg-white lg round shadow" form-type="submit" wx:if="{{isAgree}}">
-                <!-- <image class="pub_icon" src="/icons/publish/pub.png"></image> -->
                 <text class="text-bold text-green">修改</text>
             </button>
         </view>

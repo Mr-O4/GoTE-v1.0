@@ -13,12 +13,12 @@
                 <map hidden="{{!isShowModal}}" longitude="{{modalData.mapCenterLongitude}}" latitude="{{modalData.mapCenterLatitude}}" markers="{{modalData.markers}}" scale="16" show-location enable-rotate ></map>
                 <view class="flex flex-direction align-start padding-top  text-df">
                     <view class="padding-top-sm flex align-center">
-                        <text class="icon-deliver_fill margin-right-sm text-xxl"></text>
-                        <text class="text-bold">{{modalData.modalDesName}}</text>
+                        <text class="icon-locationfill margin-right-sm text-xxl"></text>
+                        <text class="text-bold text-left" style="width:510rpx; overflow:auto;">{{modalData.modalDesName}}</text>
                     </view>
                     <view class="padding-top-sm flex align-center">
                         <text class="icon-group_fill margin-right-sm text-xxl"></text>
-                        <text>剩余座位：<text class="text-bold">{{modalData.modalRemainingSeats}}</text></text>
+                        <text>剩余人数：<text class="text-bold">{{modalData.modalRemainingSeats}}</text></text>
                     </view>
                     <view class="padding-top-sm flex align-center">
                         <text class="icon-timefill margin-right-sm text-xxl"></text>
@@ -26,7 +26,7 @@
                     </view>
                     <view class="padding-top-sm flex align-center">
                         <text class="icon-activityfill margin-right-sm text-xxl"></text>
-                        <text>在 <text class="text-bold">{{modalData.modalPointName}}</text> 上车</text>
+                        <text>在 <text class="text-bold">{{modalData.modalPointName}}</text> 见面</text>
                     </view>
                 </view>
             </view>

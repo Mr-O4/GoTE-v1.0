@@ -7,13 +7,13 @@
 		"postcss": true,
 		"minified": true,
 		"newFeature": true,
-		"nodeModules": true,
+		"nodeModules": false,
 		"autoAudits": true,
 		"uglifyFileName": true,
 		"checkInvalidKey": true
 	},
 	"appid": "wxfd3b1ab3669da5d5",
-	"projectname": "GoTE_beta3",
+	"projectname": "GoTE_v1.1",
 	"libVersion": "2.6.2",
 	"simulatorType": "wechat",
 	"simulatorPluginLibVersion": {},
@@ -35,7 +35,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 9,
+			"current": 11,
 			"list": [
 				{
 					"id": 0,
@@ -104,6 +104,20 @@
 					"id": -1,
 					"name": "免责声明--disclaimer--",
 					"pathName": "pages/more/mine/settings/disclaimer/disclaimer",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "提示--tip--",
+					"pathName": "pages/tip/tip",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "常见问题",
+					"pathName": "pages/more/mine/settings/FAQ/FAQ",
 					"scene": null
 				}
 			]

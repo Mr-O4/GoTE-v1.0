@@ -19,7 +19,7 @@
             <view class="flex {{0==TabCur?'bg-gradual-blue':'bg-gradual-orange'}} padding-sm">
                 <image src="{{item.avatarUrl ? item.avatarUrl : '/images/user-unlogin.png'}}" class="cu-avatar df circle margin-right-sm" />
                 <view class="flex flex-direction">
-                    <view class="text-lg">{{item.nickName}}</view>
+                    <view class="text-lg text-cut" style="max-width:450rpx;">{{item.nickName}}</view>
                     <view class="text-sm margin-top-xs">
                         {{item.pubDate}} {{item.pubHours
                         < 10 ? '0' + item.pubHours : item.pubHours}} : {{item.pubMin < 10 ? '0' + item.pubMin : item.pubMin}} </view>
@@ -27,11 +27,7 @@
                 </view>
                 <!-- item内容栏 -->
                 <view class="flex flex-direction padding-sm text-center">
-                    <!-- 出行方式 -->
-                    <view class="text-df">
-                        出行方式：
-                        <text class="text-xl text-bold">{{item.tripMode}}</text>
-                    </view>
+                    
                     <!-- 人数 -->
                     <view class="flex justify-around align-center text-lg margin-xs">
                         <!-- 最多人数 -->
@@ -43,7 +39,7 @@
                         <!-- 目前人数 -->
                         <view class="flex align-center">
                             <text class="icon-group_fill text-xxl margin-right-sm {{0==TabCur?'text-cyan':'text-red'}}"></text>
-                            <text>已拼：</text>
+                            <text>目前：</text>
                             <text class="text-bold">{{item.currentPeopleNum}}</text>
                         </view>
                     </view>
@@ -74,14 +70,12 @@
                                 <text class="icon-locationfill"></text> 出发：
                                 <text>{{item.goDate}} \t {{item.goTime}}</text>
                             </view>
-                            <view>
-                                <text class="icon-rechargefill"></text> 预算：￥{{item.cost}} / 人</view>
                         </view>
                     </view>
                 </view>
                 <view class="text-center margin-xs">
                     <text class="text-black text-df ">备注：{{item.note}}</text>
-                    <view class="text-xs text-gray padding-top-sm">本小程序仅提供出行信息分享，要自行寻找车辆和司机哦~~</view>
+                    <view class="text-xs text-gray padding-top-sm">本小程序仅提供出行信息分享，出行方式自行协商哦~~</view>
                 </view>
             </view>
         </view>
@@ -118,6 +112,6 @@
 <view class="pub_button">
     <image class="pub_icon pub {{isPubBtnChecked?'show':'un_show'}}" src="/icons/index/pub.png" bindtap="checkPub"></image>
     <image class="pub_icon mine {{isPubBtnChecked?'show':'un_show'}}" src="/icons/index/mine.png" bindtap="mine"></image>
-    <image class="pub_icon about {{isPubBtnChecked?'show':'un_show'}}" src="/icons/index/about.png" bindtap="about"></image>
+    <image class="pub_icon setting {{isPubBtnChecked?'show':'un_show'}}" src="/icons/index/setting.png" bindtap="setting"></image>
     <image class="pub_icon publish {{isPubBtnChecked?'show':'un_show'}}" src="/icons/index/publish.png" bindtap="publish"></image>
 </view>

@@ -3,11 +3,12 @@
 <view class="flex flex-direction align-center userinfo">
     <image class=" cu-avatar xl margin bg-gray userinfo-avatar" src="{{avatarUrl}}"></image>
     <Select class="com-select" prop-array="{{selectArray}}"></Select>
+
     <button class="button login" style="display:{{startButtonDisplay}}" open-type="getUserInfo" bindtap="start">GO</button>
     <button class="button login" style="display:{{loginButtonDisplay}}" open-type="getUserInfo" bindgetuserinfo="onLogin">登录</button>
-    <view class='cu-load load-modal' wx:if="{{isLoadModal}}">
-        <view class='icon-discoverfill text-blue'></view>
+    <view class="cu-load load-modal" wx:if="{{isLoadModal}}">
+        <view class="icon-discoverfill text-blue"></view>
         <!-- <image src='/images/logo.png' class='png' mode='aspectFit'></image> -->
-        <view class='gray-text'>加载中...</view>
+        <view class="gray-text">加载中...</view>
     </view>
 </view>

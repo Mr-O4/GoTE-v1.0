@@ -44,7 +44,7 @@
     z-index: 10;
 }
 
-.pub, .mine, .about, .publish {
+.pub, .mine, .setting, .publish {
     position: absolute;
     right: 0;
 }
@@ -54,7 +54,7 @@
     transform: translateX(-110rpx);
 }
 
-.about.show {
+.setting.show {
     transition: all 0.6s;
     transform: translateX(-220rpx);
 }
@@ -64,7 +64,7 @@
     transform: translateX(-330rpx);
 }
 
-.mine.un_show, .about.un_show, .publish.un_show {
+.mine.un_show, .setting.un_show, .publish.un_show {
     transition: all 0.6s;
     transform: translateX(0rpx);
 }
@@ -75,9 +75,6 @@ map {
     height: 350rpx;
 }
 
-.cu-dialog {
-    min-height: 945.6rpx;
-}
 
 /* modal 中的三角形*/
 

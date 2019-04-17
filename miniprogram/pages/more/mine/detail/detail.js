@@ -9,8 +9,7 @@ Page({
     onLoad: function () {
         const _ = app.globalData.DetailItem;
         this.setData({
-            // tipTitle: _.direction == "go" ? "出发" : "回校",
-            tripMode: _.tripMode == "滴滴" ? "滴滴" : _.tripMode == "打车" ? "打车" : "自驾",
+            direction: _.direction,
             currentPeopleNum: _.currentPeopleNum,
             maxPeopleNum: _.maxPeopleNum,
             pointName: _.pointName,

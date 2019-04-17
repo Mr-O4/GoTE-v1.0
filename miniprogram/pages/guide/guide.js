@@ -6,7 +6,6 @@ Page({
      */
     data: {
         avatarUrl: '../../images/user-unlogin.png',
-        logged: false,
         selectArray: [{
                 "id": "gzHuaXia",
                 "text": "广州华夏职业学院",
@@ -51,13 +50,11 @@ Page({
         startButtonDisplay: 'none',
         isLoadModal: false,
     },
-
     onLogin: function (even) {
         const _this = this;
         // 登录获取头像和昵称
         if (even.detail.userInfo) {
             _this.setData({
-                logged: true,
                 avatarUrl: even.detail.userInfo.avatarUrl,
                 loginButtonDisplay: 'none',
                 startButtonDisplay: 'flex'
@@ -167,7 +164,6 @@ Page({
                 })
             }
         })
-        .catch(()=>{
-        })
+        
     }
 })

@@ -3,7 +3,7 @@
         <view class="flex align-center padding-left-sm solid-top-light" bindtap="onClickModal">
             <image src="/icons/publish/begin_localtion.png" style="width:50rpx; height:50rpx;"></image>
             <view class="flex-treble solid-bottom-light">
-                <input class="margin-sm" placeholder="请选择上车的位置" placeholder-style="color:#FFFFFFBF;" name="point" disabled bindtap="onClickModal" value="{{pointName}}"></input>
+                <input class="margin-sm" placeholder="请选择见面的地点" placeholder-style="color:#FFFFFFBF;" name="point" disabled bindtap="onClickModal" value="{{pointName}}"></input>
             </view>
         </view>
 

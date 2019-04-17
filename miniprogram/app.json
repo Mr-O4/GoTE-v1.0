@@ -13,7 +13,8 @@
         "pages/more/mine/settings/settings",
         "pages/more/mine/settings/userAgreement/userAgreement",
         "pages/more/mine/settings/disclaimer/disclaimer",
-        "pages/more/mine/settings/FAQ/FAQ"
+        "pages/more/mine/settings/FAQ/FAQ",
+        "pages/tip/tip"
     ],
     "window": {
         "backgroundTextStyle": "dark",

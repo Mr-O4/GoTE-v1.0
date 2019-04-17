@@ -196,7 +196,6 @@ Page({
                 userId: _this.data.userId
             },
             success(res) {
-                console.log(res)
                 if (res.result.length == 0) {
                     _this.setData({
                         joinList: []

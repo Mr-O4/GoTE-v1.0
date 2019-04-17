@@ -112,10 +112,10 @@ Page({
             isShowModal: true,
             modalData: {
                 modalId: _data[index]._id,
-                //地图中心经纬度、目的地名、上车名
+                //地图中心经纬度、目的地名、见面地点
                 mapCenterLatitude: _data[index].desLat,
                 mapCenterLongitude: _data[index].desLng,
-                modalTitle: _data[index].direction == "go" ? "目的地" : "上车位置",
+                modalTitle: _data[index].direction == "go" ? "目的地" : "见面位置",
                 modalDesName: _data[index].desName,
                 modalPointName: _data[index].pointName,
                 //出发日期时间
@@ -188,7 +188,7 @@ Page({
                 } else if (res.result == -1) {
                     _this.setData({
                         errModal: true,
-                        errMessage: "您已加入该行程，请不要重复加入哦~  如果想联系发起人，请移步 \"+\" 按钮 -> 点击小人 -> 我的加入"
+                        errMessage: "您已加入该行程，请不要重复加入哦~ \n 如果想联系发起人，请移步 \"+\" 按钮 -> 点击小人 -> 我的加入"
                     })
                 } else if (res.result == -2) {
                     _this.setData({
@@ -233,35 +233,15 @@ Page({
             url: "/pages/more/mine/mine",
         })
     },
-    about() {
+    setting() {
         wx.navigateTo({
-            url: "/pages/more/about/about",
+            url: "/pages/more/mine/settings/settings",
         })
     },
     publish() {
         wx.navigateTo({
             url: "/pages/publish/publish",
         })
-    },
-
-    /** 发布完返回本页时显示提示信息 */
-    onShow() {
-        const _this = this;
-        if (app.globalData.PubSuccuess == 1) {
-            _this.getItemsData(_this.data.direction);
-            wx.showToast({
-                title: "发布成功",
-                icon: "success",
-                duration: 1500
-            });
-        } else if (app.globalData.PubSuccuess == -1) {
-            wx.showToast({
-                title: "发布失败!请检查您的网络后重新发布",
-                icon: "none",
-                duration: 3000
-            });
-        }
-        app.globalData.PubSuccuess = 0;
     },
 
     onReady() {

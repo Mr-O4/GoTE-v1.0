@@ -24,7 +24,7 @@ const userMap = function(that) {
 
 Page({
     data: {
-        key: "77e62d3c792bd96b7abbdc9a0f58637b", // 高德API.key
+        bgPath: "https://ws4.sinaimg.cn/mw690/85dc7b76gy1g1l8kzkh21j20k00zke01.jpg",
         tipTitle: "出发",
         tipTitleCount: 1,
 
@@ -32,10 +32,8 @@ Page({
         peopleNumArray: ["", "1", "2", "3", "4", "5"],
 
         isShowTemplate: true, // 切换出发或回校
-        // 出行方式 方向
-        tripMode: "打车",
+        // 方向
         direction: "go",
-        bgPath: "https://ws4.sinaimg.cn/mw690/85dc7b76gy1g1l8kzkh21j20k00zke01.jpg",
         // 出发时间
         goDate: date.getFullYear() + "-" + ((date.getMonth() + 1) < 10 ? "0" + (date.getMonth() + 1) : (date.getMonth() + 1)) + "-" + (date.getDate() < 10 ? "0" + date.getDate() : date.getDate()),
 
@@ -57,7 +55,7 @@ Page({
         isAgree: true,
 
         // 加载动画
-        isLoadModal:false
+        isLoadModal: false
     },
 
     /** 切换发布方向 */
@@ -86,8 +84,10 @@ Page({
         this.data.tripMode = event.detail.value;
     },
 
+
+
     /** 
-     * 上车点 
+     * 见面点 
      * 
      * @param _pointName modal中的input
      * @param pointName 发布页中的input，在 templates/pub-go 或 pub-back 中
@@ -129,7 +129,7 @@ Page({
         if (_this.data.pointName === "") {
             _this.setData({
                 errModal: true,
-                errMessage: "请输入上车地点",
+                errMessage: "请输入见面地点",
             })
         } else {
             _this.setData({
@@ -234,7 +234,7 @@ Page({
     bindPhoneNumChange(event) {
         this.data.phoneNum = event.detail.value;
     },
-    /** 备注 */
+    /** 备注 敏感词检测 */
     bindNoteChange(event) {
         const _this = this;
         if (event.detail.value) {
@@ -247,19 +247,15 @@ Page({
     },
 
     /** 同意用户协议和免责声明 */
-    checkedAgree(){
+    checkedAgree() {
         this.setData({
             isAgree: !this.data.isAgree
         })
-        console.log(this.data.isAgree)
     },
 
     /** 提交发布按钮 */
     submit: function(event) {
         const _this = this;
-        _this.setData({
-            isLoadModal: true
-        })
         /** 验证表单信息 */
         if (!_this.WxValidate.checkForm(event.detail.value)) {
             const err = _this.WxValidate.errorList[0];
@@ -268,14 +264,15 @@ Page({
                 errMessage: err.msg
             })
             return false;
+        } else {
+            _this.setData({
+                isLoadModal: true
+            })
+            // 发布时间戳
+            _this.getPubTime();
+            // 获取头像昵称
+            _this.getAvatarAndNickName();
         }
-
-        // 发布时间戳
-        _this.getPubTime();
-        // 获取头像昵称
-        _this.getAvatarAndNickName();
-        // 获取预估价格 并提交数据库
-        _this.getCost();
     },
     /** 发布时间戳 */
     getPubTime() {
@@ -289,26 +286,18 @@ Page({
         const _this = this;
         const userInfo = wx.getStorageSync("userInfo");
         _this.data.avatarUrl = userInfo.avatarUrl
-        _this.data.nickName = userInfo.nickName
+        _this.data.nickName = userInfo.nickName;
+        // 提交数据库
+        _this.submitToDB();
+        setTimeout(() => {
+            _this.setData({
+                isLoadModal: false,
+                errModal: true,
+                errMessage: "发布失败!请检查您的网络后重新发布"
+            })
+        }, 10000)
     },
-    /** 通过高德API获取预估费用 */
-    getCost() {
-        const _this = this;
-        var myAmapFun = new amapFile.AMapWX({
-            key: _this.data.key
-        });
-        myAmapFun.getDrivingRoute({
-            origin: _this.data.originLngNLat,
-            destination: _this.data.desLngNLat,
-            success: function(res) {
-                if (res.taxi_cost) {
-                    _this.data.cost = parseFloat(parseInt(res.taxi_cost) / _this.data.maxPeopleNum)
-                }
-                // 提交数据库
-                _this.submitToDB();
-            }
-        });
-    },
+
     /** 提交数据库 */
     submitToDB() {
         const _this = this;
@@ -317,7 +306,6 @@ Page({
         _data.school = wx.getStorageSync("schoolNameForShort");
         db.collection(_data.school).add({
             data: {
-                tripMode: _data.tripMode,
                 direction: _data.direction,
 
                 desName: _data.desName,
@@ -339,7 +327,6 @@ Page({
 
                 maxPeopleNum: _data.maxPeopleNum,
                 currentPeopleNum: _data.currentPeopleNum,
-                cost: _data.cost,
 
                 note: _data.note,
                 nickName: _data.nickName,
@@ -351,18 +338,32 @@ Page({
             }
         }).then((res) => {
             console.log(res)
-            app.globalData.PubSuccuess = 1;
-            wx.navigateBack({
-                delta: 1
-            });
+            _this.setData({
+                isLoadModal: false
+            })
+            wx.showToast({
+                title: "发布成功",
+                icon: "success",
+                duration: 2000,
+                mask: true,
+                success() {
+                    setTimeout(()=>{
+                        wx.navigateBack({
+                            delta: 1
+                        });
+                    }, 2000)
+                }
+            })
         }).catch((err) => {
             console.log(err)
-            app.globalData.PubSuccuess = -1;
-            wx.navigateBack({
-                delta: 1
-            });
+            _this.setData({
+                isLoadModal: false,
+                errModal: true,
+                errMessage: "发布失败!请检查您的网络后重新发布"
+            })
         });
     },
+
     hideErrModal() {
         this.setData({
             errModal: false,
@@ -407,12 +408,12 @@ Page({
         /** 自定义提示信息 */
         let message = {
             point: {
-                required: "请选择上车地点",
-                minlength: "请选择上车地点"
+                required: "请选择见面地点",
+                minlength: "请选择见面地点"
             },
             des: {
-                required: "请选择下车地点",
-                minlength: "请选择下车地点"
+                required: "请选择目的地",
+                minlength: "请选择目的地"
             },
             date: {
                 required: "请选择出发日期",
@@ -440,11 +441,11 @@ Page({
         // 自定义验证规则
         this.WxValidate.addMethod("point", (value) => {
             return this.WxValidate.optional(value)
-        }, "请输入上车地点");
+        }, "请输入见面地点");
 
         this.WxValidate.addMethod("des", (value) => {
             return this.WxValidate.optional(value)
-        }, "请输入下车地点");
+        }, "请输入目的地");
 
         this.WxValidate.addMethod("goTime", (value) => {
             return this.WxValidate.optional(value)
