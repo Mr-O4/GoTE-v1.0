@@ -56,7 +56,7 @@ Page({
             success: res => {
                 if ((!res.authSetting['scope.userInfo']) || wx.getStorageSync("openid") == "") {
                     wx.redirectTo({
-                        url: '/pages/guide/guide'
+                        url: "/pages/guide/guide"
                     });
                 } else {
                     _this.getItemsData(_this.data.direction);

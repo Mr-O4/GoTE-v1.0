@@ -14,7 +14,7 @@
 	},
 	"appid": "wxfd3b1ab3669da5d5",
 	"projectname": "GoTE_v1.1",
-	"libVersion": "2.6.2",
+	"libVersion": "2.6.5",
 	"simulatorType": "wechat",
 	"simulatorPluginLibVersion": {},
 	"cloudfunctionTemplateRoot": "cloudfunctionTemplate",

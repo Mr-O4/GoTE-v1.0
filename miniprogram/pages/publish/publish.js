@@ -3,7 +3,6 @@ const app = getApp();
 const db = wx.cloud.database();
 const date = new Date();
 import WxValidate from "../../libs/WxValidate";
-const amapFile = require("../../libs/amap-wx.js");
 const msg = require("../../libs/msgfilter.js");
 
 const userMap = function(that) {

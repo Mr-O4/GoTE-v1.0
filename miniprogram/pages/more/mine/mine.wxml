@@ -27,7 +27,7 @@
 <!-- 我的发布 -->
 <view class="cu-timeline" hidden="{{TabCur!=0}}">
     <view class="cu-item {{item.direction=='go'?'icon-pullright text-blue':'icon-pullleft text-red'}} text-sm" wx:for="{{publishList}}" wx:key>
-        <text>{{item.pubDate}} {{item.pubHours < 10 ? '0' + item.pubHours : item.pubHours}}:{{item.pubMin < 10 ? '0' + item.pubMin : item.pubMin}}</text>
+        <text>发布于 {{item.pubDate}} {{item.pubHours < 10 ? '0' + item.pubHours : item.pubHours}}:{{item.pubMin < 10 ? '0' + item.pubMin : item.pubMin}}</text>
         <view class="content {{item.direction=='go'?'bg-gradual-blue':'bg-gradual-orange'}} shadow-blur" bindtap="isSelector" data-id="{{index}}">
             <text class="text-df text-cut" wx:if="{{item.direction=='go'}}" style="max-width:348rpx">{{item.pointName}} <text class="text-bold text-lg text-yellow">到</text> {{item.desName}}</text>
             <text class="text-df text-cut" wx:if="{{item.direction=='back'}}" style="max-width:348rpx">{{item.desName}} <text class="text-bold text-lg text-mauve">回</text> {{item.pointName}}</text>
@@ -46,7 +46,7 @@
 <!-- 我的加入 -->
 <view class="cu-timeline" hidden="{{TabCur!=1}}">
     <view class="cu-item {{item.direction=='go'?'icon-pullright text-blue':'icon-pullleft text-red'}} text-sm" wx:for="{{joinList}}" wx:key>
-        <text>{{item.pubDate}} {{item.pubHours < 10 ? '0' + item.pubHours : item.pubHours}}:{{item.pubMin < 10 ? '0' + item.pubMin : item.pubMin}}</text>
+        <text>发布于 {{item.pubDate}} {{item.pubHours < 10 ? '0' + item.pubHours : item.pubHours}}:{{item.pubMin < 10 ? '0' + item.pubMin : item.pubMin}}</text>
         <view class="content {{item.direction=='go'?'bg-gradual-blue':'bg-gradual-orange'}} shadow-blur" bindtap="isSelector" data-id="{{index}}">
             <text class="text-df text-cut" style="max-width:348rpx" wx:if="{{item.direction=='go'}}">{{item.pointName}} <text class="text-bold text-lg text-yellow">到</text> {{item.desName}}</text>
             <text class="text-df text-cut" style="max-width:348rpx" wx:if="{{item.direction=='back'}}">{{item.desName}} <text class="text-bold text-lg text-mauve">回</text> {{item.pointName}}</text>
