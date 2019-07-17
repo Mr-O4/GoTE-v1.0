@@ -1,4 +1,4 @@
-> **This documentation was written on 18 July 2019. **
+> This documentation was written on 18 July 2019. 
 
 
 
@@ -24,7 +24,9 @@
     <!--license-->
     <img alt="GitHub" src="https://img.shields.io/github/license/TCP404/GoTE-miniprogram.svg?color=green&style=for-the-badge">
     <!--platform-->
-    <img alt="platform" src="https://img.shields.io/badge/platform-wechat-black.svg?style=for-the-badge"/>
+    <a href="https://developers.weixin.qq.com/miniprogram/dev/devtools/download.html">
+    	<img alt="platform" src="https://img.shields.io/badge/platform-wechat-black.svg?style=for-the-badge"/>
+    </a>
 </div>
 
 
