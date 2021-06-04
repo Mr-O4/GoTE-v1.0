@@ -1,0 +1,25 @@
+<!--miniprogram/pages/musics/musics.wxml-->
+<navigator class="btn-back flex-sub padding-bottom padding-right text-white" open-type="navigateTo"
+  url="/pages/index/index" hover-class="none">
+  <text class="margin-left icon-homefill"></text>
+  <text class="">首页</text>
+</navigator>
+<!-- 内容区域 -->
+
+<include src="play.wxml" />
+
+<!-- 底部播放器 -->
+<view class="player">
+  <image class="player-cover" src="{{play.coverImgUrl}}" />
+  <view class="player-info">
+    <view class="player-info-title">{{play.title}}</view>
+    <view class="player-info-singer">{{play.singer}}</view>
+  </view>
+  <view class="player-controls">
+    <!-- 播放或暂停 -->
+    <image wx:if="{{state=='paused'}}" src="images/02.png" bindtap="play" />
+    <image wx:else src="images/02stop.png" bindtap="pause" />
+    <!-- 下一曲 -->
+    <image src="images/03.png" bindtap="next" />
+  </view>
+</view>

@@ -1,0 +1,38 @@
+<!-- welcome.wxml -->
+<image class="bgimg" src="../../images/guide.jpg"></image>
+<view class="flex flex-direction align-center userinfo">
+
+    <!-- 用户头像和昵称 -->
+    <view class="userinfo">
+        <block wx:if="{{canIUseOpenData}}" calss="userinfo-opendata">
+            <view class="userinfo-avatar">
+                <open-data type="userAvatarUrl"></open-data>
+            </view>
+            <open-data type="userNickName"></open-data>
+        </block>
+        <block wx:elif="{{!hasUserInfo}}">
+            <button wx:if="{{canIUseGetUserProfile}}" type="primary" bindtap="getUserProfile"
+                style="position: relative; top: 85rpx; font-size: 35rpx"> 授权登录 </button>
+            <button wx:elif="{{canIUse}}" type="primary" open-type="getUserInfo" bindgetuserinfo="getUserInfo"
+                style="position: relative; top: 85rpx; font-size: 35rpx"> 授权登录 </button>
+        </block>
+
+        <block wx:else>
+            <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+            <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+        </block>
+    </view>
+
+    <!-- 选择学校框 -->
+    <Select class="com-select" prop-array="{{selectArray}}"
+        style="left: 0rpx; top: 258rpx; position: relative"></Select>
+    <button class="button login" style="display: {{startButtonDisplay}}; position: relative; left: 0rpx; top: 275rpx"
+        open-type="getUserInfo" bindtap="start">GO</button>
+
+    <!-- 加载动画 -->
+    <view class="cu-load load-modal" wx:if="{{isLoadModal}}">
+        <view class="icon-discoverfill text-blue"></view>
+        <!-- <image src='/images/logo.png' class='png' mode='aspectFit'></image> -->
+        <view class="gray-text">加载中...</view>
+    </view>
+</view>

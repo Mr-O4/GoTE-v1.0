@@ -1,0 +1,13 @@
+<template name="pub-go">
+        <view class="flex align-center padding-left-sm solid-top-light" bindtap="onClickModal">
+            <image src="/icons/publish/begin_localtion.png" style="width:50rpx; height:50rpx;"></image>
+            <view class="flex-treble solid-bottom-light">
+                <input class="margin-sm" placeholder="请选择见面的地点" placeholder-style="color:#FFFFFFBF;" name="point" disabled bindtap="onClickModal" value="{{pointName}}"></input>
+            </view>
+        </view>
+
+        <view class="flex align-center padding-left-sm solid-bottom-light" bindtap="selectionDes">
+            <image src="/icons/publish/end_localtion.png" style="width:50rpx; height:50rpx;"></image>
+            <input class="flex-treble margin-sm" placeholder="点击选择目的地" placeholder-style="color:#FFFFFFBF;" name="des" disabled catchtap="selectionDes" value="{{desName}}"></input>
+        </view>
+</template>

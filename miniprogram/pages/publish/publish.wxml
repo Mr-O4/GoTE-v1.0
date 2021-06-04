@@ -1,0 +1,13 @@
+<view class="bgview {{direction=='go'?'bg-go':'bg-back'}}" style="width:100vw; height:100vh; position:fixed; top:0; left:0;">
+
+    <view class="cu-load load-modal" wx:if="{{isLoadModal}}">
+        <view class="icon-discoverfill text-blue"></view>
+        <view class="gray-text">加载中...</view>
+    </view>
+ 
+    <!-- 表单 -->
+    <include src="form.wxml"/>
+</view>
+
+<!-- 错误提示 -->
+<include src="errorTip.wxml" />

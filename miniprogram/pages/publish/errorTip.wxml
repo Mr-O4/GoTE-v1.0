@@ -1,0 +1,13 @@
+<view class="cu-modal {{errModal?'show':''}}">
+    <view class="cu-dialog bg-white">
+        <view class="padding-xl text-lg">
+            <view>
+                <text class="icon-warnfill text-red text-xxl margin-right"></text>
+            </view>
+            <text>{{errMessage}}</text>
+        </view>
+        <view class="cu-bar bg-white solid-top">
+            <view class="action padding flex-sub text-cyan" bindtap="hideErrModal">确定</view>
+        </view>
+    </view>
+</view>

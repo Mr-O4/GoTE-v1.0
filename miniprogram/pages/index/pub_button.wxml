@@ -1,0 +1,7 @@
+<view class="pub_button">
+    <image class="pub_icon pub {{isPubBtnChecked?'show':'un_show'}}" src="/icons/index/pub.png" bindtap="checkPub"></image>
+    <image class="pub_icon mine {{isPubBtnChecked?'show':'un_show'}}" src="/icons/index/mine.png" bindtap="mine"></image>
+    <image class="pub_icon setting {{isPubBtnChecked?'show':'un_show'}}" src="/icons/index/setting.png" bindtap="setting"></image>
+    <image class="pub_icon publish {{isPubBtnChecked?'show':'un_show'}}" src="/icons/index/publish.png" bindtap="publish"></image>
+    <image class="pub_icon music {{isPubBtnChecked?'show':'un_show'}}" src="/icons/index/music.png" bindtap="music"></image>
+</view>

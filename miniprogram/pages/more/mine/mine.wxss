@@ -1,0 +1,59 @@
+/* miniprogram/pages/more/mine/mine.wxss */
+Page {
+    background: #FFF;
+}
+.btn-back {
+    position: absolute;
+    top: 7vh;
+    left: 0;
+}
+.info {
+    position: absolute;
+    right: 0;
+    top: 21vh;
+    width: 85vw;
+    z-index: 2;
+}
+
+.avatar {
+   
+    position: absolute;
+    left: 0;
+    float: left;
+    border: 4rpx solid #FFF;
+    overflow: hidden;
+    z-index: 99;
+    border-radius: 100%;
+}
+
+.nick_name {
+    z-index: 3;
+    opacity: 0.7;
+    width: calc(85vw - 64rpx);
+    height: 128rpx;
+}
+
+.loadmore {
+    width: 100%;
+    line-height: 4.6em;
+    font-size: 14px;
+    text-align: center;
+}
+
+.loading_text {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.loadmore_line {
+    border-top: 1px solid #e5e5e5;
+    margin-top: 3.0em;
+}
+
+.loadmore_text_in-line {
+    position: relative;
+    top: -2.4em;
+    padding: 0 0.55em;
+    background-color: #FFF;
+    color: #999;
+}

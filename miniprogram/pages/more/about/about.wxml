@@ -1,0 +1,5 @@
+<navigator class="btn-back flex-sub padding-bottom padding-right text-black" open-type="navigateBack" delta="1" hover-class="none">
+    <text class="margin-left icon-back"></text>
+    返回
+</navigator>
+<image src="https://ws2.sinaimg.cn/mw690/85dc7b76ly1g1pwhqwid0j20k00zkmy7.jpg" mode="widthFix" style=""></image>

@@ -1,0 +1,30 @@
+<view>
+    <image src="/images/banner.png" mode="widthFix" class="response"></image>
+    <view id="tab" class="bg-gray nav text-center text-lg light {{ceiling?'fixed':''}}" style="padding-top:{{StatusBar}}px;">
+        <view class="cu-item {{0==TabCur?'text-black cur':''}}" bindtap="tabSelect" data-id="0">
+            <text class="icon-pullright"></text> 出发
+        </view>
+        <view class="cu-item {{1==TabCur?'text-black cur':''}}" bindtap="tabSelect" data-id="1">
+            <text class="icon-pullleft"></text> 回校
+        </view>
+    </view>
+</view>
+
+<!-- 行程卡列表 -->
+<include src="card_list.wxml"/>
+<import src="../../templates/index-modal/index-modal" />
+<template is="index_modal" data="{{modalData, isShowModal, TabCur}}" />
+<!-- 错误提示框 -->
+<view class="cu-modal {{errModal?'show':''}}">
+    <view class="cu-dialog bg-white">
+        <view class="padding-xl text-lg">
+            <view class="margin-bottom"><text class="icon-warnfill text-red text-xxl"></text></view>
+            <text>{{errMessage}}</text>
+        </view>
+        <view class="cu-bar bg-white solid-top">
+            <view class="action padding flex-sub text-cyan" bindtap="hideErrModal">确定</view>
+        </view>
+    </view>
+</view>
+<!-- 发布按钮 -->
+<include src="pub_button.wxml"/>
