@@ -65,7 +65,7 @@
                 <image src="/icons/publish/date.png" style="width:50rpx; height:50rpx;"></image>
                 <text class="margin-left-sm margin-right-sm">出发日期</text>
                 <view class="flex-treble solid-bottom-light">
-                    <picker mode="date" value="{{goDate}}" start="{{pubDate}}" end="2020-09-01"
+                    <picker mode="date" value="{{goDate}}" start="{{pubDate}}" end="2050-09-01"
                         bindchange="selectionDate">
                         <input class="margin-sm" placeholder="请选择出发日期" placeholder-style="color:#FFFFFFBF;" name="date"
                             disabled bindblur="selectionDate" value="{{goDate}}"></input>

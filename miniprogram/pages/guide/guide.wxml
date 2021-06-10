@@ -1,5 +1,7 @@
 <!-- welcome.wxml -->
-<image class="bgimg" src="../../images/guide.jpg"></image>
+<image class="logo" src="../../images/logo.png" ></image>
+<image class="bgimg" src="../../images/guide.png"></image>
+
 <view class="flex flex-direction align-center userinfo">
 
     <!-- 用户头像和昵称 -->
@@ -11,22 +13,18 @@
             <open-data type="userNickName"></open-data>
         </block>
         <block wx:elif="{{!hasUserInfo}}">
-            <button wx:if="{{canIUseGetUserProfile}}" type="primary" bindtap="getUserProfile"
-                style="position: relative; top: 85rpx; font-size: 35rpx"> 授权登录 </button>
-            <button wx:elif="{{canIUse}}" type="primary" open-type="getUserInfo" bindgetuserinfo="getUserInfo"
-                style="position: relative; top: 85rpx; font-size: 35rpx"> 授权登录 </button>
+            <button wx:if="{{canIUseGetUserProfile}}" type="primary" bindtap="getUserProfile" style="position: relative; top: 185rpx; font-size: 35rpx"> 授权登录 </button>
         </block>
 
-        <block wx:else>
-            <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+        <block wx:else >
+            <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
             <text class="userinfo-nickname">{{userInfo.nickName}}</text>
         </block>
     </view>
 
     <!-- 选择学校框 -->
-    <Select class="com-select" prop-array="{{selectArray}}"
-        style="left: 0rpx; top: 258rpx; position: relative"></Select>
-    <button class="button login" style="display: {{startButtonDisplay}}; position: relative; left: 0rpx; top: 275rpx"
+    <Select class="com-select" prop-array="{{selectArray}}" style="left: 0rpx; top: 338rpx; position: relative"></Select>
+    <button class="button login" style="display: {{startButtonDisplay}}; position: relative; left: 0rpx; top: 340rpx"
         open-type="getUserInfo" bindtap="start">GO</button>
 
     <!-- 加载动画 -->

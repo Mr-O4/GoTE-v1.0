@@ -2,7 +2,7 @@
     <text class="flex justify-center text-blue text-lg margin-top-xl" wx:if="{{isDataEmpty}}">
         目前没有人发布出行信息哦 \n 快点击右下角 ＋ 发布一条
     </text>
-    <view wx:for="{{0==TabCur?itemsDataGo:itemsDataBack}}" wx:key="*this">
+    <view wx:for="{{0==TabCur?itemsDataGo:itemsDataBack}}" >
         <view class="margin-sm bg-white flex flex-direction shadow-warp" data-id="{{index}}" bindtap="showModal" style="border-radius:10px;">
             <!-- item顶部头像昵称栏 -->
             <view class="flex {{0==TabCur?'bg-gradual-blue':'bg-gradual-orange'}} padding-sm" style="border-radius:10px 10px 0px 0px;">
@@ -10,8 +10,7 @@
                 <view class="flex flex-direction">
                     <view class="text-lg text-cut" style="max-width:450rpx;">{{item.nickName}}</view>
                     <view class="text-sm margin-top-xs">
-                        {{item.pubDate}} {{item.pubHours
-                        < 10 ? '0' + item.pubHours : item.pubHours}} : {{item.pubMin < 10 ? '0' + item.pubMin : item.pubMin}} </view>
+                        {{item.pubDate}} {{item.pubHours < 10 ? '0' + item.pubHours : item.pubHours}} : {{item.pubMin < 10 ? '0' + item.pubMin : item.pubMin}} </view>
                     </view>
                 </view>
                 <!-- item内容栏 -->

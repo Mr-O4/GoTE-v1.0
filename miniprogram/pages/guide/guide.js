@@ -5,17 +5,37 @@ Page({
      * 页面的初始数据
      */
     data: {
-        avatarUrl: '../../images/user-unlogin.png',
         selectArray: [{
+                "id": "GSTU_hu",
+                "text": "广东科技学院(松山湖校区)",
+                "lngNlat": "113.9829580000,23.0695130000",
+            },
+            {
+                "id": "GSTU_cheng",
+                "text": "广东科技学院(南城校区)",
+                "lngNlat": "113.7621410000,22.9784180000",
+            },
+            {
+                "id": "DUT_hu",
+                "text": "东莞理工学院(松山湖校区)",
+                "lngNlat": "113.8808820000,22.9092230000",
+            },
+            {
+                "id": "DUT_cheng",
+                "text": "东莞理工学院(莞城校区)",
+                "lngNlat": "113.7792770000,23.0570330000",
+            },
+            {
                 "id": "gzHuaXia",
                 "text": "广州华夏职业学院",
                 "lngNlat": "113.5155300000,23.5767500000"
-            }
-            // , {
-            //     "id": "gzChengJian",
-            //     "text": "广州城建技术学院",
-            //     "lngNlat": "113.6081600000,23.5278900000"
-            // }, {
+            }, 
+            {
+                "id": "gzChengJian",
+                "text": "广州城建技术学院",
+                "lngNlat": "113.6081600000,23.5278900000"
+            },
+            //  {
             //     "id": "gzHuaRuan",
             //     "text": "广州大学华软软件学院 ",
             //     "lngNlat": "113.4920042753,23.4508353274"
@@ -75,22 +95,6 @@ Page({
                 })
                 wx.setStorageSync('userInfo', res.userInfo)
             }
-        })
-    },
-    getUserInfo(e) {
-        // 不推荐使用getUserInfo获取用户信息，预计自2021年4月13日起，getUserInfo将不再弹出弹窗，并直接返回匿名的用户个人信息
-      
-        this.setData({
-            userInfo: e.detail.userInfo,
-            hasUserInfo: true
-        })
-        wx.setStorage({
-            data: e.detail.userInfo.avatarUrl,
-            key: 'avatarUrl'
-        })
-        wx.setStorage({
-            data: e.detail.userInfo.nickName,
-            key: 'nickName'
         })
     },
 
